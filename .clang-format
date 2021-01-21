@@ -1,0 +1,16 @@
+---
+BasedOnStyle: LLVM
+AccessModifierOffset: '-4'
+AllowShortBlocksOnASingleLine: 'false'
+AllowShortCaseLabelsOnASingleLine: 'false'
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None
+AllowShortLoopsOnASingleLine: 'false'
+AlwaysBreakTemplateDeclarations: 'Yes'
+ColumnLimit: '80'
+IndentWidth: '4'
+Language: Cpp
+PointerAlignment: Right
+
+...

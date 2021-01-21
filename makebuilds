@@ -1,0 +1,33 @@
+#!/bin/zsh
+
+##
+## Run cmake to create
+##      Debug
+##      Release
+##      RelWithDebInfo
+##      MinSizeRel
+## for Makefiles
+##
+echo ""
+
+## Clear all build folders first
+rm -rf ./build/make/Debug/*
+rm -rf ./build/make/Release/*
+rm -rf ./build/make/RelWithDebInfo/*
+rm -rf ./build/make/MinSizeRel/*
+
+## Debug
+cmake -S ./src -B ./build/make/Debug -DCMAKE_BUILD_TYPE=Debug
+echo ""
+
+## Release
+cmake -S ./src -B ./build/make/Release -DCMAKE_BUILD_TYPE=Release
+echo ""
+
+## RelWithDebInfo
+cmake -S ./src -B ./build/make/RelWithDebInfo -DCMAKE_BUILD_TYPE=RelWithDebInfo
+echo ""
+
+## MinSizeRel
+cmake -S ./src -B ./build/make/MinSizeRel -DCMAKE_BUILD_TYPE=MinSizeRel
+echo ""

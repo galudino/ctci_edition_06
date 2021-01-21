@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# Usage example to build and run arrays_and_strings - question 1, in debug mode:
+# % ./ctci6 01 01 Debug
+#
+
+## Mode is $2
+mode=$3
+
+if [ -z $3 ]
+then
+    mode=Debug
+fi
+
+echo "\n[Running make with mode: '"$mode"'...]\n"
+make $0_$1_$2 -C ./build/make/$mode
+echo "\n[Make complete.]\n"
+
+echo "\n[Running '"$0_$1_$2"']\n"
+./build/make/$mode/$0_$1_$2
+echo "\n[Process completed.]\n"
