@@ -61,7 +61,7 @@ you can review the supported generators on your local machine.<p>
 
 For example, to use the <b>Xcode</b> project file generator (for the <b>Xcode IDE</b> on <b>macOS</b>):<br>
 ```c
-your_username@your-machine ctci_edition_06 % cmake -S ./ -B ./build/xcode -G "Xcode"
+your_username@your-machine ctci_edition_06 % cmake -S ./src -B ./build/xcode -G "Xcode"
 ```
 You can change the executable/build type within the Xcode IDE.
 
