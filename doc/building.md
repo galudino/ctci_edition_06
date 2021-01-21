@@ -1,6 +1,6 @@
 # Cracking the Coding Interview: 6th Edition (in C++)
 
-#### Return to [README](../../README.md)
+#### Return to [README](../README.md)
 
 ## Building with Makefiles
 ### Build types
@@ -68,4 +68,4 @@ You can change the executable/build type within the Xcode IDE.
 Please read the instructions for your specific IDE to determine how to proceed,<br>
 after generating the necessary project files from <b>CMake</b>.
 
-#### Return to [README](../../README.md)
+#### Return to [README](../README.md)
