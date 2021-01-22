@@ -5,7 +5,7 @@
 ##
 
 ## default filename if $1 is an empty string
-filename_default="CTCI-Edition06_$(date +%Y-%m-%d_%H%M%S).tar.gz"
+filename_default="ctci_edition_06_$(date +%Y-%m-%d_%H%M%S).tar.gz"
 
 ## command to create a tar archive
 cmd=tar
