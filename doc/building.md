@@ -19,16 +19,16 @@ Use the `makebuilds` script in the <b>Terminal</b> as follows:
 your_username@your-machine ctci_edition_06 % ./makebuilds
 ```
 
-This will generate separate <b>Makefiles</b> for the build types described above, using CMake.
+This will generate separate <b>`Makefiles`</b> for the build types described above, using CMake.
 
 ### Using the <code>ctci6</code> script
-After generating the Makefiles,<br>
+After generating the `<b>Makefiles</b>`,<br>
 You may then use the included `ctci6` script to build and run<br>
 the executable for a given question.
 
 For example,<br>
 to build and run the executable for
-- <b>Chapter 01: Arrays and Strings</b>, question <b>1.1</b>
+- <b>[Chapter 01: Arrays and Strings](01.md)</b>, question <b>[1.1](01.md)</b>
 
 ```c
 your_username@your-machine ctci_edition_06 % ./ctci6 01 01
