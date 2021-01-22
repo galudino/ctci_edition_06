@@ -24,7 +24,7 @@
       - [Return to Completed Question List](#return-to-completed-question-list)
 
 ### Chapter `01` | [Arrays and Strings](01.md)
-  - [ ] [1.1: Is Unique](01.md) `./ctci6 01 01`
+  - [x] [1.1: Is Unique](01.md) `./ctci6 01 01`
   - [ ] [1.2: Check Permutation](01.md) `./ctci6 01 02`
   - [ ] [1.3: URLify](01.md) `./ctci6 01 03`
   - [ ] [1.4: Palindrome Permutation](01.md) `./ctci6 01 04`
