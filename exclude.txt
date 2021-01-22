@@ -5,6 +5,7 @@
 *.gitignore
 *.dSYM
 *.tar.gz
-build/*.o
+build/*
 $filename_default
 $1
+.vscode
