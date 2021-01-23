@@ -1,9 +1,16 @@
 /*!
     \file       source.cpp
-    \brief      Source file
+    \brief      Source file for CTCI (6th Edition), question 1.8: Zero Matrix
 
-    \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \details
+    Assume you have a method isSubstring which checks if one word is a substring of another.
+    Given two strings, s1 and s2, 
+    write code to check if s2 is a rotation of s1 
+    using only one call to isSubstring 
+    (e.g.,"waterbottle" is a rotation of "erbottlewat").
+
+    \author     TODO
+    \date       dd mmm yyyy
 */
 
 #include "header.hpp"

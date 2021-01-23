@@ -1,14 +1,24 @@
 /*!
     \file       main.cpp
-    \brief      Source file for application driver code
+    \brief      CTCI (6th Edition), question 1.3: URLify
 
-    \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \details
+    Write a method to replace all spaces in a string with '%20`. 
+    You may assume that the string has sufficient space at the end to hold the additional characters, 
+    and that you are given the "true" length of the string.
+
+    (Note: If implementing in Java, 
+    please use a character array 
+    so that you can perform this operation in place.)
+
+    \author     TODO
+    \date       dd mmm yyyy
 */
 
 #include "header.hpp"
 
 #include <iostream>
+
 /*!
     \brief      Program execution begins and ends here
 
@@ -18,6 +28,6 @@
     \return     0 on success, otherwise failure (see error code)
 */
 int main(int argc, const char *argv[]) {
-    std::cout << "Hello, world!" << std::endl;
+    std::cout << "Question 1.3: URLify" << std::endl;
     return EXIT_SUCCESS;
 }

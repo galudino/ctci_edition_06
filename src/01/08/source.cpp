@@ -1,11 +1,14 @@
 /*!
-    \file       source.cpp
-    \brief      Source file
+    \file       header.hpp
+    \brief      Source file for CTCI (6th Edition), question 1.8: Zero Matrix
 
-    \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \details
+    Write an algorithm such that if an element in an (M x N) matrix is 0, 
+    its entire row and column are set to 0.
+
+    \author     TODO
+    \date       dd mmm yyyy
 */
-
 #include "header.hpp"
 
 

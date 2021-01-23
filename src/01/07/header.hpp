@@ -1,57 +1,19 @@
 /*!
     \file       header.hpp
-    \brief      Header file
+    \brief      Header file for CTCI (6th Edition), question 1.7: Rotate Matrix
 
-    \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \details
+    Given an image represented by an (N x N) matrix, 
+    where each pixel in the image is 4 bytes, 
+    write a method to rotate the image by 90 degrees. 
+    Can you do this in place?
+
+    \author     TODO
+    \date       dd mmm yyyy
 */
 
 #ifndef HEADER_HPP
 #define HEADER_HPP
-
-// remove unused includes
-#include <filesystem>
-#include <fstream>
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <cstdio>
-
-#define _USE_MATH_DEFINES
-#include <cmath>
-
-#include <ctime>
-#include <memory>
-#include <algorithm>
-#include <any>
-#include <chrono>
-#include <condition_variable>
-#include <exception>
-#include <functional>
-#include <limits>
-#include <mutex>
-#include <optional>
-#include <regex>
-#include <shared_mutex>
-#include <stdexcept>
-#include <system_error>
-#include <thread>
-#include <utility>
-
-#include <array>
-#include <vector>
-#include <deque>
-#include <forward_list>
-#include <list>
-
-#include <set>
-#include <map>
-
-#include <unordered_set>
-#include <unordered_map>
-
-#include <stack>
-#include <queue>
 
 
 

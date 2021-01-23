@@ -1,14 +1,21 @@
 /*!
     \file       main.cpp
-    \brief      Source file for application driver code
+    \brief      CTCI (6th Edition), question 1.7: Rotate Matrix
 
-    \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \details
+    Given an image represented by an (N x N) matrix, 
+    where each pixel in the image is 4 bytes, 
+    write a method to rotate the image by 90 degrees. 
+    Can you do this in place?
+
+    \author     TODO
+    \date       dd mmm yyyy
 */
 
 #include "header.hpp"
 
 #include <iostream>
+
 /*!
     \brief      Program execution begins and ends here
 
@@ -18,6 +25,6 @@
     \return     0 on success, otherwise failure (see error code)
 */
 int main(int argc, const char *argv[]) {
-    std::cout << "Hello, world!" << std::endl;
+    std::cout << "Question 1.7: Rotate Matrix" << std::endl;
     return EXIT_SUCCESS;
 }

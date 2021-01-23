@@ -1,11 +1,13 @@
 /*!
-    \file       source.cpp
-    \brief      Source file
+    \file       source.hpp
+    \brief      Source file for CTCI (6th Edition), question 1.2: Check Permutation
 
-    \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \details
+    Given two strings, write a method to decide if one is a permutation of the other.
+
+    \author     TODO
+    \date       dd mmm yyyy
 */
-
 #include "header.hpp"
 
 
