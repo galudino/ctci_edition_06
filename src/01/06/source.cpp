@@ -9,8 +9,8 @@
     your method should return the original string. 
     You can assume the string has only uppercase and lowercase letters (a - z).
 
-    \author     TODO
-    \date       dd mmm yyyy
+    \author     Gemuele Aludino
+    \date       22 Jan 2021
 */
 
 #include "header.hpp"
