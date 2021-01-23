@@ -29,7 +29,7 @@
   - [ ] [1.3: URLify](01.md) `./ctci6 01 03`
   - [ ] [1.4: Palindrome Permutation](01.md) `./ctci6 01 04`
   - [ ] [1.5: One Away](01.md) `./ctci6 01 05`
-  - [ ] [1.6: String Compression](01.md) `./ctci6 01 06`
+  - [x] [1.6: String Compression](01.md) `./ctci6 01 06`
   - [ ] [1.7: Rotate Matrix](01.md) `./ctci6 01 07`
   - [ ] [1.8: Zero Matrix](01.md) `./ctci6 01 08`
   - [ ]  [1.9: String Rotation](01.md) `./ctci6 01 09`
