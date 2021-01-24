@@ -165,6 +165,14 @@ std::ostream &operator<<(std::ostream &os,
 
 template <typename T>
 class forward_list {
+private:
+    using Node = fwd_list_node<T>;
+
+    Node *m_insert_after(Node *curr, const T &data);
+    Node *m_erase_after(Node *curr);
+    Node *m_erase_after(Node *curr, Node *last);
+
+    Node m_node;
 public:
     using iterator = fwd_list_iterator<T>;
     using const_iterator = fwd_list_const_iterator<T>;
@@ -172,20 +180,13 @@ public:
     using value_type = T;
     using reference = T &;
     using const_reference = const T &;
-    using size_type = std::size_t;
+    using size_type = std::size_t; 
 
-private:
-    using Node = fwd_list_node<T>;
-
-    Node *m_insert_after(Node *curr, const_reference data);
-    Node *m_erase_after(Node *curr);
-    Node *m_erase_after(Node *curr, Node *last);
-
-public:
     forward_list() = default;
 
     forward_list(std::initializer_list<T> l) {
         auto curr = &m_node;
+
         for (auto &val : l) {
             curr = m_insert_after(curr, val);
         }
@@ -231,13 +232,11 @@ public:
     void clear() { m_erase_after(&m_node, nullptr); }
 
     friend std::ostream &operator<< <>(std::ostream &os, const forward_list &l);
-private:
-    Node m_node;
 };
 
 template <typename T>
 typename forward_list<T>::size_type forward_list<T>::size() const {
-    auto curr = &m_node;
+    auto curr = m_node.m_next;
     auto count = 0;
 
     while (curr != nullptr) {
@@ -250,7 +249,8 @@ typename forward_list<T>::size_type forward_list<T>::size() const {
 
 template <typename T>
 typename forward_list<T>::reference forward_list<T>::operator[](int n) {
-    auto curr = &m_node;
+    auto curr = m_node.m_next;
+
     for (auto i = 0; i < n; ++i) {
         curr = curr->m_next;
     }
@@ -299,11 +299,15 @@ forward_list<T>::m_erase_after(typename forward_list<T>::Node *curr,
 template <typename T>
 std::ostream &operator<<(std::ostream &os, 
                          const typename ctci6::forward_list<T> &l) {
+    auto curr = l.m_node.m_next;
+    
     os << "{ ";
-    for (auto &val : l) {
-        os << val << " ";
+    while (curr != nullptr) {
+        os << curr->m_data << " ";
+        curr = curr->m_next;
     }
     os << "}";
+
     return os;
 }
 

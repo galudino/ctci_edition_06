@@ -53,6 +53,6 @@ int main(int argc, const char *argv[]) {
 
     std::cout << "After erase_after: " << std::endl;
     std::cout << list << std::endl;
-
+    
     return EXIT_SUCCESS;
 }
