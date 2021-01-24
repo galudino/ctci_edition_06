@@ -80,15 +80,12 @@ bool has_unique_chars(const std::string &str, std::vector<bool> &v) {
     // since v will be reused. All elements assigned to be false, or 0.
     v.assign(v.size(), false);
 
-    // Save the character count.
-    auto size = str.size();
-
-    for (auto i = 0; i < size; ++i) {
-        if (v[str[i]]) {
-            // if v at index str[i] == true
+    for (auto ch : str) {
+        if (v[ch]) {
+            // if v at index ch = true
             return false;
         } else {
-            v[str[i]] = true;
+            v[ch] = true;
         }
     }
 
@@ -109,19 +106,16 @@ bool has_unique_chars(const std::string &str, std::bitset<256> &bs) {
     // since bs will be reused. All bits set to 0.
     bs.reset();
 
-    // Save the character count.
-    auto size = str.size();
-
-    for (auto i = 0; i < size; ++i) {
-        if (bs[str[i]]) {
-            // if bs at index str[i] == true
+    for (auto ch : str) {
+        if (bs[ch]) {
+            // if bs at index ch = true
             return false;
         } else {
-            // bs.set(str[i], true) also works here.
-            bs[str[i]] = true;
+            // bs.set(ch, true) also works here.
+            bs[ch] = true;
         }
     }
-    
+
     return true;
 }
 
@@ -132,17 +126,14 @@ bool has_unique_chars(const std::string &str, std::bitset<256> &bs) {
     \return             true, if str has all unique characters, false otherwise 
  */
 bool has_unique_chars(const std::string &str) {
-    // Save the character count.
-    const auto size = str.size();
-
-    // The outer loop begins at i = 0;
-    // our current character is str[i].
-    for (auto i = 0; i < size - 1; ++i) {
-        // The inner loop begins at j = 1;
-        // our comparison character is str[j].
-        for (auto j = i + 1; j < size; ++j) {
-            // str[i] is compared with every other char after it.
-            if (str[i] == str[j]) {
+    // The outer loop begins at it_i = str.begin();
+    // our current character is *it_i. 
+    for (auto it_i = str.begin(); it_i != str.end(); it_i++) {
+        // The inner loop begins at it_j = it_i + 1;
+        // our comparison character is *it_j.
+        for (auto it_j = it_i + 1; it_j != str.end(); it_j++) {
+            // *it_i is compared with every other char after it.
+            if (*it_i == *it_j) {
                 // If the current character and comparison character
                 // are matched, we stop immediately and return false.
                 return false;
