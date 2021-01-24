@@ -1,57 +1,27 @@
 /*!
     \file       header.hpp
-    \brief      Header file
+    \brief      Header file for CTCI (6th Edition), question 2.3: Delete Middle Node
+
+    \details
+    Implement an algorithm to delete a node in the middle 
+    (i.e. any node but the first and the last node, 
+    not necessarily the exact middle) of a singly linked list, 
+    given only access to that node.
+
+    EXAMPLE
+    Input: the node c from the linked list 
+        a->b->c->d->e->f
+
+    Result: nothing is returned, 
+    but the new linked list looks like 
+        a->b->d->e->f
 
     \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \date       23 Jan 2021
 */
 
 #ifndef HEADER_HPP
 #define HEADER_HPP
-
-// remove unused includes
-#include <filesystem>
-#include <fstream>
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <cstdio>
-
-#define _USE_MATH_DEFINES
-#include <cmath>
-
-#include <ctime>
-#include <memory>
-#include <algorithm>
-#include <any>
-#include <chrono>
-#include <condition_variable>
-#include <exception>
-#include <functional>
-#include <limits>
-#include <mutex>
-#include <optional>
-#include <regex>
-#include <shared_mutex>
-#include <stdexcept>
-#include <system_error>
-#include <thread>
-#include <utility>
-
-#include <array>
-#include <vector>
-#include <deque>
-#include <forward_list>
-#include <list>
-
-#include <set>
-#include <map>
-
-#include <unordered_set>
-#include <unordered_map>
-
-#include <stack>
-#include <queue>
 
 
 
