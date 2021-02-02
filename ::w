@@ -1,0 +1,52 @@
+/*!
+    \file       main.cpp
+    \brief      Source file for application driver code
+
+    \author     Gemuele Aludino
+    \date       15 Aug 2020
+*/
+
+#include "header.hpp"
+
+#include <iostream>
+
+template <typename T>
+void ctci6::forward_list<T>::remove_duplicates(ctci6::forward_list<T> &l) {
+    auto curr = l.m_node.m_next;
+
+    while (curr) {
+        auto inner = curr->m_next;
+
+        while (inner) {
+            auto next_node = inner->m_next;
+            if (curr->m_data == inner->m_data) 
+                std::cout << "matched" << std::endl;
+                delete inner; 
+            }
+
+            inner = next_node;
+        }
+
+        curr = curr->m_next;
+    }
+}
+
+#include <iostream>
+
+/*!
+    \brief      Program execution begins and ends here
+
+    \param[in]  argc    Command line argument count
+    \param[in]  argv    Command line arguments
+
+    \return     0 on success, otherwise failure (see error code)
+*/
+int main(int argc, const char *argv[]) {
+    auto list = ctci6::forward_list<int>{3, 3, 2, 4, 3, 5};
+    std::cout << list << std::endl;
+
+    ctci6::forward_list<int>::remove_duplicates(list);
+    std::cout << list << std::endl;
+
+    return EXIT_SUCCESS;
+}
