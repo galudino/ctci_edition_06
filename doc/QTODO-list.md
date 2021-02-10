@@ -110,7 +110,7 @@
   - [ ] [8.5: Recursive Multiply](08.md#85-recursive-multiply-ctci6-08-05) `./ctci6 08 05`
   - [ ] [8.6: Towers of Hanoi](08.md#86-towers-of-hanoi-ctci6-08-06) `./ctci6 08 06`
   - [ ] [8.7: Permutations without Dups](08.md#87-permutations-without-dups-ctci6-08-07) `./ctci6 08 07`
-  - [ ] [8.8: Permutations with Dups](08.md#88-perumutations-with-dups-ctci6-08-08) `./ctci6 08 08`
+  - [ ] [8.8: Permutations with Dups](08.md#88-permutations-with-dups-ctci6-08-08) `./ctci6 08 08`
   - [ ] [8.9: Parens](08.md#89-parens-ctci6-08-09) `./ctci6 08 09`
   - [ ] [8.10: Paint Fill](08.md#810-paint-fill-ctci6-08-10) `./ctci6 08 10`
   - [ ] [8.11: Coins](08.md#811-coins-ctci6-08-11) `./ctci6 08 11`
@@ -123,7 +123,7 @@
   - [ ] [9.2: Social Network](09.md#92-social-network-ctci6-09-02) `./ctci6 09 02`
   - [ ] [9.3: Web Crawler](09.md#93-web-crawler-ctci6-09-03) `./ctci6 09 03`
   - [ ] [9.4: Duplicate URLs](09.md#94-duplicate-urls-ctci6-09-04) `./ctci6 09 04`
-  - [ ] [9.5: Cache](09.md#95-cache-ctci6-09-05) `./ctci6 09 05
+  - [ ] [9.5: Cache](09.md#95-cache-ctci6-09-05) `./ctci6 09 05`
   - [ ] [9.6: Sales Rank](09.md#96-sales-rank-ctci6-09-06) `./ctci6 09 06`
   - [ ] [9.7: Personal Financial Manager](09.md#97-personal-financial-manager-ctci6-09-07) `./ctci6 09 07`
   - [ ] [9.8: Pastebin](09.md#98-pastebin-ctci6-09-08) `./ctci6 09 08`
@@ -160,7 +160,7 @@
   - [ ] [15.3: Dining Philosophers](15.md#153-dining-philosophers-ctci6-15-03) `./ctci6 15 03`
   - [ ] [15.4: Deadlock-Free Class](15.md#154-deadlock-free-class-ctci6-15-04) `./ctci6 15 04`
   - [ ] [15.5: Call In Order](15.md#155-call-in-order-ctci6-15-05) `./ctci6 15 05`
-  - [ ] [15.6: Synchronized Methods](16.md#156-synchronized-methods-ctci6-15-06) `./ctci6 15 06`
+  - [ ] [15.6: Synchronized Methods](15.md#156-synchronized-methods-ctci6-15-06) `./ctci6 15 06`
   - [ ] [15.7: FizzBuzz](15.md#157-fizzbuzz-ctci6-15-07) `./ctci6 15 07`
       #### Return to [Completed Question List](#completed-question-list)
 ### Chapter `16` | [Moderate](16.md)
@@ -204,15 +204,15 @@
   - [ ] [17.10: Majority Element](17.md#1710-majority-element-ctci6-17-10) `./ctci6 17 10`
   - [ ] [17.11: Word Distance](17.md#1711-word-distance-ctci6-17-11) `./ctci6 17 11`
   - [ ] [17.12: BiNode](17.md#1712-binode-ctci6-17-12) `./ctci6 17 12`
-  - [ ] [17.13: Re-Space](17.md#1713-respace-ctci6-17-13) `./ctci6 17 13`
+  - [ ] [17.13: Re-Space](17.md#1713-re-space-ctci6-17-13) `./ctci6 17 13`
   - [ ] [17.14: Smallest K](17.md#1714-smallest-k-ctci6-17-14) `./ctci6 17 14`
   - [ ] [17.15: Longest Word](17.md#1715-longest-word-ctci6-17-15) `./ctci6 17 15`
   - [ ] [17.16: The Masseuse](17.md#1716-the-masseuse-ctci6-17-16) `./ctci6 17 16`
   - [ ] [17.17: Multi Search](17.md#1717-multi-search-ctci6-17-17) `./ctci6 17 17`
   - [ ] [17.18: Shortest Supersequence](17.md#1718-shortest-supersequence-ctci6-17-18) `./ctci6 17 18`
   - [ ] [17.19: Missing Two](17.md#1719-missing-two-ctci6-17-19) `./ctci6 17 19`
-  - [ ] [17.20: Continuous Median](17.md#1720-continuous-mediam-ctci6-17-20) `./ctci6 17 20`
-  - [ ] [17.21: Volume of Histogram](17.md#1720-volume-of-histogram-ctci6-17-21) `./ctci6 17 21`
+  - [ ] [17.20: Continuous Median](17.md#1720-continuous-median-ctci6-17-20) `./ctci6 17 20`
+  - [ ] [17.21: Volume of Histogram](17.md#1721-volume-of-histogram-ctci6-17-21) `./ctci6 17 21`
   - [ ] [17.22: Word Transformer](17.md#1722-word-transformer-ctci6-17-22) `./ctci6 17 22`
   - [ ] [17.23: Max Black Square](17.md#1723-max-black-square-ctci6-17-23) `./ctci6 17 23`
   - [ ] [17.24: Max Submatrix](17.md#1724-max-submatrix-ctci6-17-24) `./ctci6 17 24`\
