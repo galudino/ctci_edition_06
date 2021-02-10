@@ -5,6 +5,7 @@
   - [This repository](#this-repository)
   - [Foreword](#foreword)
   - [Table of Contents (interview questions)](#table-of-contents-interview-questions)
+  - [Questions I have completed](#questions-i-have-completed)
   - [Folder Structure](#folder-structure)
     - [`build/`](#build)
     - [`doc/`](#doc)
@@ -20,7 +21,6 @@
     - [Step 1](#step-1)
     - [Step 2](#step-2)
   - [More information on building](#more-information-on-building)
-  - [Questions I have completed](#questions-i-have-completed)
 
 ## Foreword
 
@@ -52,6 +52,12 @@ and the Terminal (on macOS).
 - Chapter `15` | [Threads and Locks](doc/15.md)
 - Chapter `16` | [Moderate](doc/16.md)
 - Chapter `17` | [Hard](doc/17.md)
+  
+## Questions I have completed
+
+See [Completed Question List](doc/QTODO-list.md)<br>
+for a checklist of questions I have completed.<br>
+<p>Please feel free to fork this repository and have your own working copy.
 
 ## Folder Structure
 ### `build/`
@@ -150,9 +156,3 @@ your_username@your-machine ctci_edition_06 % ./ctci6 01 01 Release
 ## More information on building
 This repository uses <b>CMake</b>. (see https://cmake.org) <p>
 Review [Building](doc/building.md) for more details.
-
-## Questions I have completed
-
-See [Completed Question List](doc/QTODO-list.md)<br>
-for a checklist of questions I have completed.<br>
-<p>Please feel free to fork this repository and have your own working copy.
