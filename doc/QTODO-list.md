@@ -35,7 +35,7 @@
   - [ ]  [1.9: String Rotation](01.md#19-string-rotation-ctci6-01-09) `./ctci6 01 09`
     #### Return to [Completed Question List](#completed-question-list)
 ### Chapter `02` | [Linked Lists](02.md)
-  - [ ] [2.1: Remove Dups](02.md#21-remove-dups-ctci6-02-01) `./ctci6 02 01`
+  - [x] [2.1: Remove Dups](02.md#21-remove-dups-ctci6-02-01) `./ctci6 02 01`
   - [ ] [2.2: Return Kth to Last](02.md#22-return-kth-to-last-ctci6-02-02) `./ctci6 02 02`
   - [x] [2.3: Delete Middle Node](02.md#23-delete-middle-node-ctci6-02-03) `./ctci6 02 03`
   - [ ] [2.4: Partition](02.md#24-partition-ctci6-02-04) `./ctci6 02 04`
