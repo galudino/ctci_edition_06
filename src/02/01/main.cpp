@@ -56,12 +56,14 @@ void ctci6::forward_list<T>::remove_duplicates(ctci6::forward_list<T> &l) {
     // (while curr != null)
     while (current != l.end()) {
         // This will terminate the loop
-        // if the iterator is on the last element, or node.
-        // (if curr->m_next == null) break;
-        if (!current.m_next().m_curr) {
-            break; 
+        // if current does not have a link.
+        {   
+            auto temp = current;
+            if (++temp == l.end()) {
+                break;
+            }
         }
-    
+
         auto compare = current; // comparison node
         auto trail = compare;   // trails behind comparison node.
                                 // will facilitate deletion.
@@ -88,8 +90,6 @@ void ctci6::forward_list<T>::remove_duplicates(ctci6::forward_list<T> &l) {
         ++current;
     }
 }
-
-#include <iostream>
 
 /*!
     \brief      Program execution begins and ends here
