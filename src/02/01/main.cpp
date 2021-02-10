@@ -30,7 +30,7 @@
             var trail: node = compare
 
             while compare not null {
-                if curr.data == compare.data {
+                if current.data == compare.data {
                     var victim: node = trail.next
                     trail.next = victim.next
                     delete victim
