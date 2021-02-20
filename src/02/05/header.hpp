@@ -1,6 +1,22 @@
 /*!
     \file       header.hpp
-    \brief      Header file
+    \brief      Header file for CTCI (6th Edition), question 2.5: Sum Lists
+
+    \details
+    You have two numbers represented by a linked list, where each node contains a single digit. i
+    The digits are stored in reverse order, such that the 1's digit is at the head of the list.
+    Write a function that adds the two numbers and returns the sum as a linked list.
+
+    EXAMPLE
+    Input:  (7 -> 1 -> 6) + (5 -> 9 -> 2). That is, 617 + 295.
+    Output: (2 -> 1 -> 9). That is, 912.
+
+    FOLLOW UP:
+    Suppose the digits are stored in forward order. Repeat the above problem.
+    
+    EXAMPLE
+    Input:  (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
+    Output: (9 -> 1 -> 2). That is, 912.
 
     \author     Gemuele Aludino
     \date       15 Aug 2020
@@ -8,50 +24,6 @@
 
 #ifndef HEADER_HPP
 #define HEADER_HPP
-
-// remove unused includes
-#include <filesystem>
-#include <fstream>
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <cstdio>
-
-#define _USE_MATH_DEFINES
-#include <cmath>
-
-#include <ctime>
-#include <memory>
-#include <algorithm>
-#include <any>
-#include <chrono>
-#include <condition_variable>
-#include <exception>
-#include <functional>
-#include <limits>
-#include <mutex>
-#include <optional>
-#include <regex>
-#include <shared_mutex>
-#include <stdexcept>
-#include <system_error>
-#include <thread>
-#include <utility>
-
-#include <array>
-#include <vector>
-#include <deque>
-#include <forward_list>
-#include <list>
-
-#include <set>
-#include <map>
-
-#include <unordered_set>
-#include <unordered_map>
-
-#include <stack>
-#include <queue>
 
 
 

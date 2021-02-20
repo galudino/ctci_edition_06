@@ -39,7 +39,7 @@
   - [ ] [2.2: Return Kth to Last](02.md#22-return-kth-to-last-ctci6-02-02) `./ctci6 02 02`
   - [x] [2.3: Delete Middle Node](02.md#23-delete-middle-node-ctci6-02-03) `./ctci6 02 03`
   - [ ] [2.4: Partition](02.md#24-partition-ctci6-02-04) `./ctci6 02 04`
-  - [ ] [2.5: Sum Lists](02.md#25-sum-lists-ctci6-02-05) `./ctci6 02 05`
+  - [x] [2.5: Sum Lists](02.md#25-sum-lists-ctci6-02-05) `./ctci6 02 05`
   - [ ] [2.6: Palindrome](02.md#26-palindrome-ctci6-02-06) `./ctci6 02 06`
   - [ ] [2.7: Intersection](02.md#27-intersection-ctci6-02-07) `./ctci6 02 07`
   - [ ] [2.8: Loop Detection](02.md#28-loop-detection-ctci6-02-08) `./ctci6 02 08`
