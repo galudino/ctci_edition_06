@@ -200,7 +200,7 @@ typename std::forward_list<T, Alloc> ctci6::sum_lists_forward(const typename std
         it = sum_as_list.before_begin();
 
         for (auto ch : sum_as_str) {
-            sum_as_list.insert_after(it, static_cast<int>(ch) - 48);
+            it = sum_as_list.insert_after(it, static_cast<int>(ch) - 48);
         }
     }
 
