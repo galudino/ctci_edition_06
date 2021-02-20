@@ -53,16 +53,15 @@ typename std::forward_list<T, Alloc> sum_lists_forward(const typename std::forwa
     \return     0 on success, otherwise failure (see error code)
 */
 int main(int argc, const char *argv[]) {
+    // Reverse-order lists 
     auto list_a = std::forward_list<int> { 7, 1, 6 };
     auto list_b = std::forward_list<int> { 5, 9, 2 };
-    
-    std::cout << list_a << " + " << list_b << " = " << ctci6::sum_lists(list_a, list_b)
-    << " (617 + 295 = 912)" << std::endl;
 
+    // Forward-order lists 
     auto list_c = std::forward_list<int> { 6, 1, 7 };
     auto list_d = std::forward_list<int> { 2, 9, 5 };
 
-    // Two ways to solve this if the lists are not reversed:
+    // If the lists are not reversed (forward-order lists), consider the following:
     // 0) If the place value count is not known,
     //    invoke sum_lists_forward(list_c, list_d).
     //    This will reverse list_c and list_c, and call sum_lists().
@@ -74,11 +73,13 @@ int main(int argc, const char *argv[]) {
     //      - have the lists reversed so sum_lists can be invoked
     //      - iterate over the lists to determine what the place value count is (the size(s) of the lists)
 
-    std::cout << list_c << " + " << list_b << " = " << ctci6::sum_lists_forward(list_c, list_d)
-    << " (617 + 295 = 912)" << std::endl;
-
-    std::cout << list_c << " + " << list_b << " = " << ctci6::sum_lists_forward(list_c, list_d, 3)
-    << " (617 + 295 = 912)" << std::endl;
+    std::cout 
+    << "reverse order list:\n" << list_a << " + " << list_b << " = " 
+    << ctci6::sum_lists(list_a, list_b)  << " (617 + 295 = 912)\n\n"
+    << "forward order list (place value count unknown):\n" << list_c << " + " << list_b << " = " 
+    << ctci6::sum_lists_forward(list_c, list_d) << " (617 + 295 = 912)\n\n"
+    << "forward order list (place value count known):\n" << list_c << " + " << list_b << " = " 
+    << ctci6::sum_lists_forward(list_c, list_d, 3) << " (617 + 295 = 912)" << std::endl;
 
     return EXIT_SUCCESS;
 }
@@ -162,6 +163,9 @@ typename std::forward_list<T, Alloc> ctci6::sum_lists_forward(const typename std
     auto sum_as_list = std::forward_list<T, Alloc>();
 
     if (place_value_count == 0) {
+        // 0 is the implicit default value.
+        // This may be inefficient, but might be the only way to use this function
+        // if the place_value_count isn't known.
         auto X = std::forward_list<T, Alloc>(x);
         auto Y = std::forward_list<T, Alloc>(y);
     
@@ -169,6 +173,7 @@ typename std::forward_list<T, Alloc> ctci6::sum_lists_forward(const typename std
         Y.reverse();
 
         sum_as_list = sum_lists(X, Y);
+        sum_as_list.reverse();
     } else {
         auto it_x = x.begin();
         auto it_y = y.begin();
