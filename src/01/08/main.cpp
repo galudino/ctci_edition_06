@@ -14,6 +14,39 @@
 
 #include <iostream>
 
+namespace ctci6 {
+
+template <typename T, size_t M, size_t N>
+std::array<std::array<T, N>, M>
+zero_matrix(const std::array<std::array<T, N>, M> &mtx) {
+    for (auto i = 0; i < M; ++i) {
+        auto found = false;
+
+        for (auto j = 0; j < N; ++j) {
+            if (mtx[i][j] == 0) {
+                // zero out all elements in row i
+                for (auto k = 0; k < N; ++k) {
+                    const_cast<T &>(mtx[i][k]) = 0;
+                }
+
+                // zero out all elements in column j
+                for (auto k = 0; k < M; ++k) {
+                    const_cast<T &>(mtx[k][j]) = 0;
+                }
+
+                found = true;
+                break;
+            }
+        }
+
+        if (found) { break; }
+    }
+
+    return mtx;
+}
+
+}
+
 /*!
     \brief      Program execution begins and ends here
 
@@ -23,6 +56,21 @@
     \return     0 on success, otherwise failure (see error code)
 */
 int main(int argc, const char *argv[]) {
-    std::cout << "Question 1.8: Zero Matrix" << std::endl;
+    using mtxrow = std::array<int, 4>;
+
+    auto mtx = ctci6::zero_matrix(std::array<mtxrow, 3>{
+        mtxrow { 1, 2, 3, 4 },
+        mtxrow { 5, 6, 0, 8 },
+        mtxrow { 9, 10, 11, 12 }
+    });
+
+    for (const auto &row : mtx) {
+        for (auto element : row) {
+            std::cout << element << " ";
+        }
+
+        std::cout << std::endl;
+    }
+
     return EXIT_SUCCESS;
 }
