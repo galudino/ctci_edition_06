@@ -1,9 +1,12 @@
 /*!
     \file       header.hpp
-    \brief      Header file
+    \brief      Header file for CTCI (6th Edition), question 2.2: Return Kth to last
+
+    \details
+    Implement an algorithm to find the kth to last element of a singly linked list.
 
     \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \date       TODO
 */
 
 #ifndef HEADER_HPP
