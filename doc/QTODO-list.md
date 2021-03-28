@@ -31,7 +31,7 @@
   - [ ] [1.5: One Away](01.md#15-one-away-ctci6-01-05) `./ctci6 01 05`
   - [x] [1.6: String Compression](01.md#16-string-compression-ctci6-01-06) `./ctci6 01 06`
   - [ ] [1.7: Rotate Matrix](01.md#17-rotate-matrix-ctci6-01-07) `./ctci6 01 07`
-  - [ ] [1.8: Zero Matrix](01.md#18-zero-matrix-ctci6-01-08) `./ctci6 01 08`
+  - [x] [1.8: Zero Matrix](01.md#18-zero-matrix-ctci6-01-08) `./ctci6 01 08`
   - [ ]  [1.9: String Rotation](01.md#19-string-rotation-ctci6-01-09) `./ctci6 01 09`
     #### Return to [Completed Question List](#completed-question-list)
 ### Chapter `02` | [Linked Lists](02.md)
