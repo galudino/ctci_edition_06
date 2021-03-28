@@ -56,12 +56,14 @@ zero_matrix(const std::array<std::array<T, N>, M> &mtx) {
     \return     0 on success, otherwise failure (see error code)
 */
 int main(int argc, const char *argv[]) {
-    using mtxrow = std::array<int, 4>;
+    constexpr auto ROW_COUNT = 3;
+    constexpr auto COL_COUNT = 4;
+    using matrix = ctci6::matrix<int, ROW_COUNT, COL_COUNT>;
 
-    auto mtx = ctci6::zero_matrix(std::array<mtxrow, 3>{
-        mtxrow { 1, 2, 3, 4 },
-        mtxrow { 5, 6, 0, 8 },
-        mtxrow { 9, 10, 11, 12 }
+    auto mtx = ctci6::zero_matrix(matrix::row_array {
+        matrix::row { 1, 2, 3, 4 },
+        matrix::row { 5, 6, 0, 8 },
+        matrix::row { 9, 10, 11, 12 }
     });
 
     for (const auto &row : mtx) {
