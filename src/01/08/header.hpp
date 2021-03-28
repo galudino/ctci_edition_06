@@ -17,7 +17,6 @@
 #include <array>
 #include <memory>
 
-/*
 namespace ctci6 {
 
 template <typename T, size_t M, size_t N = M>
@@ -90,6 +89,5 @@ std::ostream &operator<<(std::ostream &os, const matrix<T, M, N> &m) {
 }
 
 }
-*/
 
 #endif /* HEADER_HPP */
