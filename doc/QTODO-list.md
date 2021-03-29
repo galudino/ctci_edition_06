@@ -46,7 +46,7 @@
       #### Return to [Completed Question List](#completed-question-list)
 ### Chapter `03` | [Stacks and Queues](03.md)
   - [ ] [3.1: Three in One](03.md#31-three-in-one-ctci6-03-01) `./ctci6 03 01`
-  - [ ] [3.2: Stack Min](03.md#32-stack-min-ctci6-03-02) `./ctci6 03 02`
+  - [x] [3.2: Stack Min](03.md#32-stack-min-ctci6-03-02) `./ctci6 03 02`
   - [ ] [3.3: Stack of Plates](03.md#33-stack-of-plates-ctci6-03-03) `./ctci6 03 03`
   - [ ] [3.4: Queue via Stacks](03.md#34-queue-via-stacks-ctci6-03-04) `./ctci6 03 04`
   - [ ] [3.5: Sort Stack](03.md#35-sort-stack-ctci6-03-05) `./ctci6 03 05`
