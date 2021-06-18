@@ -45,6 +45,9 @@ struct fwd_list_node {
     fwd_list_node() = default;
     fwd_list_node(const T &data) : m_data(data) { }
 
+    static void hook_after(fwd_list_node *x, fwd_list_node *y);
+    static void unhook_after(fwd_list_node *y);
+
     fwd_list_node *m_next = nullptr;
     T m_data;
 };
@@ -185,14 +188,13 @@ public:
     forward_list() = default;
 
     forward_list(std::initializer_list<T> l) {
-        auto curr = &m_node;
-
-        for (auto &val : l) {
-            curr = m_insert_after(curr, val);
+        auto it = before_begin();
+        for (const auto &val : l) {
+            it = insert_after(it, val);
         }
     }
 
-    ~forward_list() { m_erase_after(&m_node, nullptr); }
+    ~forward_list() { clear(); }    
 
     iterator before_begin() { return iterator(&m_node); }
     const_iterator before_begin() const { return const_iterator(&m_node); }
@@ -212,12 +214,12 @@ public:
     
     reference operator[](int n);
 
-    void push_front(const T &data) { m_insert_after(before_begin(), data); }
+    void push_front(const T &data) { insert_after(before_begin(), data); }
 
-    void pop_front() { m_erase_after(before_begin()); }
+    void pop_front() { erase_after(before_begin()); }
 
     iterator insert_after(const_iterator pos, const T &val) {
-        return iterator(m_insert_after(pos, val));
+        return iterator(m_insert_after(const_cast<Node *>(pos.m_curr), val));
     }
 
     iterator erase_after(const_iterator pos) {
@@ -229,10 +231,21 @@ public:
                                       const_cast<Node *>(last.m_curr)));
     }
 
-    void clear() { m_erase_after(&m_node, nullptr); }
+    void clear() { erase_after(before_begin(), end()); }
 
     friend std::ostream &operator<< <>(std::ostream &os, const forward_list &l);
 };
+
+template <typename T>
+void fwd_list_node<T>::hook_after(fwd_list_node *x, fwd_list_node *y) {
+    y->m_next = x->m_next;
+    x->m_next = y;
+}
+
+template <typename T>
+void fwd_list_node<T>::unhook_after(fwd_list_node *y) {
+    y->m_next = y->m_next->m_next;
+}
 
 template <typename T>
 typename forward_list<T>::size_type forward_list<T>::size() const {
@@ -263,10 +276,7 @@ typename forward_list<T>::Node *
 forward_list<T>::m_insert_after(typename forward_list<T>::Node *curr,
                                 const T &data) {
     auto new_node = new typename forward_list<T>::Node(data);
-
-    new_node->m_next = curr->m_next;
-    curr->m_next = new_node;
-
+    forward_list<T>::Node::hook_after(curr, new_node);
     return curr->m_next;
 }
 
@@ -274,10 +284,8 @@ template <typename T>
 typename forward_list<T>::Node *
 forward_list<T>::m_erase_after(typename forward_list<T>::Node *curr) {
     auto pos = curr->m_next;
-
-    curr->m_next = pos->m_next;
+    forward_list<T>::Node::unhook_after(curr);
     delete pos;
-
     return curr->m_next;
 }
 
@@ -285,29 +293,18 @@ template <typename T>
 typename forward_list<T>::Node *
 forward_list<T>::m_erase_after(typename forward_list<T>::Node *curr,
                                typename forward_list<T>::Node *last) {
-    auto pos = curr->m_next;
-
-    while (pos != last) {
-        auto temp = pos;
-        pos = pos->m_next;
-        delete temp;
-    }
-
+    while (curr->m_next != last) { m_erase_after(curr); }
     return last;
 }
 
 template <typename T>
 std::ostream &operator<<(std::ostream &os, 
                          const typename ctci6::forward_list<T> &l) {
-    auto curr = l.m_node.m_next;
-    
-    os << "{ ";
-    while (curr != nullptr) {
-        os << curr->m_data << " ";
-        curr = curr->m_next;
+    os << "{";
+    for (const auto &val : l) {
+        os << " " << val << " ";
     }
     os << "}";
-
     return os;
 }
 

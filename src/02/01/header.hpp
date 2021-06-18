@@ -33,6 +33,9 @@ struct fwd_list_node {
     fwd_list_node() = default;
     fwd_list_node(const T &data) : m_data(data) { }
 
+    static void hook_after(fwd_list_node *x, fwd_list_node *y);
+    static void unhook_after(fwd_list_node *y);
+
     fwd_list_node *m_next = nullptr;
     T m_data;
 };
@@ -162,9 +165,9 @@ public:
     forward_list() = default;
 
     forward_list(std::initializer_list<T> l) {
-        auto curr = &m_node;
-        for (auto &val : l) {
-            curr = m_insert_after(curr, val);
+        auto it = before_begin();
+        for (const auto &val : l) {
+            it = insert_after(it, val);
         }
     }
 
@@ -195,11 +198,11 @@ public:
     }
 
     void push_front(const T &data) {
-        m_insert_after(&m_node, data);
+        insert_after(before_begin(), data);
     }
 
     void pop_front() {
-        m_erase_after(&m_node);
+        erase_after(before_begin());
     }
     
     iterator insert_after(const_iterator it, const T &data) {
@@ -215,7 +218,7 @@ public:
     }
 
     void clear() {
-        m_erase_after(&m_node, nullptr);
+        erase_after(before_begin(), end());
     }
 
     static void remove_duplicates(forward_list &l);
@@ -224,13 +227,21 @@ public:
 };
 
 template <typename T>
+void fwd_list_node<T>::hook_after(fwd_list_node *x, fwd_list_node *y) {
+    y->m_next = x->m_next;
+    x->m_next = y;
+}
+
+template <typename T>
+void fwd_list_node<T>::unhook_after(fwd_list_node *y) {
+    y->m_next = y->m_next->m_next;
+}
+
+template <typename T>
 typename forward_list<T>::Node *
 forward_list<T>::m_insert_after(typename forward_list<T>::Node *pos, const T &data) {
     auto new_node = new typename forward_list<T>::Node(data);
-
-    new_node->m_next = pos->m_next;
-    pos->m_next = new_node;
-
+    forward_list<T>::Node::hook_after(pos, new_node);
     return pos->m_next;
 }
 
@@ -238,10 +249,8 @@ template <typename T>
 typename forward_list<T>::Node *
 forward_list<T>::m_erase_after(typename forward_list<T>::Node *pos) {
     auto victim = pos->m_next;
-
-    pos->m_next = victim->m_next;
+    forward_list<T>::Node::unhook_after(pos);
     delete victim;
-
     return pos->m_next;
 }
 
@@ -249,28 +258,17 @@ template <typename T>
 typename forward_list<T>::Node *
 forward_list<T>::m_erase_after(typename forward_list<T>::Node *pos,
                                typename forward_list<T>::Node *last) {
-    auto curr = pos->m_next;
-
-    while (curr != last) {
-        auto victim = curr;
-        curr = curr->m_next;
-        delete victim;
-    }
-
+    while (pos->m_next != nullptr) { m_erase_after(pos); }
     return last;
 }
 
 template <typename T>
 std::ostream &operator<<(std::ostream &os, const typename ctci6::forward_list<T> &l) {
-    auto curr = l.m_node.m_next;
-    
-    os << "{ ";
-    while (curr) {
-        os << curr->m_data << " ";
-        curr = curr->m_next;
+    os << "{";
+    for (const auto &val : l) {
+        os << " " << val << " ";
     }
     os << "}";
-
     return os;
 }
 
