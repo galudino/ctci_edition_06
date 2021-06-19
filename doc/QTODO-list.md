@@ -143,7 +143,7 @@
       #### Return to [Completed Question List](#completed-question-list)
 ### Chapter `12` | [C and C++](12.md)
   - [ ] [12.1: Last K Lines](12.md#121-last-k-lines-ctci6-12-01) `./ctci6 12 01`
-  - [ ] [12.2: Reverse String](12.md#122-reverse-string-ctci6-12-02) `./ctci6 12 02`
+  - [x] [12.2: Reverse String](12.md#122-reverse-string-ctci6-12-02) `./ctci6 12 02`
   - [ ] [12.3: Hash Table vs STL Map](12.md#123-hash-table-vs-stl-map-ctci6-12-03) `./ctci6 12 03`
   - [ ] [12.4: Virtual Functions](12.md#124-virtual-functions-ctci6-12-04) `./ctci6 12 04`
   - [ ] [12.5: Shallow vs. Deep Copy](12.md#125-shallow-vs-deep-copy-ctci6-12-05) `./ctci6 12 05`
