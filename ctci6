@@ -1,21 +1,22 @@
 #!/bin/zsh
 
-# Usage example to build and run arrays_and_strings - question 1, in debug mode:
-# % ./ctci6 01 01 Debug
-#
+##
+## Usage example to build Chapter 01, Question 01, 'Debug' mode
+## % ./ctci6 01 01 Debug
+##
 
-## Mode is $2
-mode=$3
+## Mode is $3
+MODE=$3
 
 if [ -z $3 ]
 then
-    mode=Debug
+    MODE=Debug
 fi
 
-echo "\n[Running make with mode: '"$mode"'...]\n"
-make $0_$1_$2 -C ./build/make/$mode
+echo "\n[Running make with mode: '"$MODE"'...]\n"
+make -C ./build/make/$MODE/$1/$2
 echo "\n[Make complete.]\n"
 
 echo "\n[Running '"$0_$1_$2"']\n"
-./build/make/$mode/$0_$1_$2
+./build/make/$MODE/$1/$2/$0_$1_$2
 echo "\n[Process completed.]\n"
