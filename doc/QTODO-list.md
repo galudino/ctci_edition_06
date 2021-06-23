@@ -149,7 +149,7 @@
   - [ ] [12.5: Shallow vs. Deep Copy](12.md#125-shallow-vs-deep-copy-ctci6-12-05) `./ctci6 12 05`
   - [ ] [12.6: Volatile](12.md#126-volatile-ctci6-12-06) `./ctci6 12 06`
   - [ ] [12.7: Virtual Base Class](12.md#127-virtual-base-class-ctci6-12-07) `./ctci6 12 07`
-  - [ ] [12.8: Copy Node](12.md#128-copy-node-ctci6-12-08) `./ctci6 12 08`
+  - [x] [12.8: Copy Node](12.md#128-copy-node-ctci6-12-08) `./ctci6 12 08`
   - [ ] [12.9: Smart Pointer](12.md#129-smart-pointer-ctci6-12-09) `./ctci6 12 09`
   - [ ] [12.10: Malloc](12.md#1210-malloc-ctci6-12-10) `./ctci6 12 10`
   - [ ] [12.11: 2D Alloc](12.md#1211-2d-alloc-ctci6-12-11) `./ctci6 12 11`

@@ -1,58 +1,49 @@
 /*!
     \file       header.hpp
-    \brief      Header file
+    \brief      Header file for CTCI (6th Edition), question 12.8: Copy Node
+
+    \details
+    Write a method that takes a pointer to a `Node` structure
+    as a parameter and returns a complete copy of the
+    passed-in data structure. The `Node` data structure
+    contains two pointers to other `Node`s. 
 
     \author     Gemuele Aludino
-    \date       15 Aug 2020
+    \date       18 Jun 2021
 */
 
 #ifndef HEADER_HPP
 #define HEADER_HPP
 
-// remove unused includes
-#include <filesystem>
-#include <fstream>
+#include <cstddef> // std::size_t
 #include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <cstdio>
 
-#define _USE_MATH_DEFINES
-#include <cmath>
+namespace ctci6 {
 
-#include <ctime>
-#include <memory>
-#include <algorithm>
-#include <any>
-#include <chrono>
-#include <condition_variable>
-#include <exception>
-#include <functional>
-#include <limits>
-#include <mutex>
-#include <optional>
-#include <regex>
-#include <shared_mutex>
-#include <stdexcept>
-#include <system_error>
-#include <thread>
-#include <utility>
+template <typename T>
+struct node;
 
-#include <array>
-#include <vector>
-#include <deque>
-#include <forward_list>
-#include <list>
+}
 
-#include <set>
-#include <map>
+template <typename T>
+struct ctci6::node {
+    using Self = node;
 
-#include <unordered_set>
-#include <unordered_map>
+    using value_type = T;
+    using pointer = T *;
+    using reference = T &;
+    using const_reference = const T &;
 
-#include <stack>
-#include <queue>
+    using size_type = std::size_t;
 
+    static Self copy_by_addr(Self *n);
+
+    value_type m_data;
+
+    Self *m_next = nullptr;
+    Self *m_prev = nullptr;
+};
 
 
 #endif /* HEADER_HPP */
+
