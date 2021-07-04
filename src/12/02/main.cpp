@@ -17,6 +17,25 @@ namespace ctci6 {
 
 void reverse(char *str);
 
+template <typename BidirectionalIterator>
+void reverse(BidirectionalIterator start, BidirectionalIterator finish);
+
+}
+
+template <typename BidirectionalIterator>
+void ctci6::reverse(BidirectionalIterator start, BidirectionalIterator finish) {
+    // Get the element count by calculating the delta of finish and start
+    const auto size = finish - start;
+
+    // Get the mid element address by using start + (size / 2)
+    const auto mid = start + (size >> 1);
+    
+    while (start != mid) {
+        // swap(start, --finish);
+        auto temp = *start;
+        *(start++) = *(--finish);
+        *(finish) = temp;
+    }
 }
 
 /*!
@@ -34,11 +53,10 @@ int main(int argc, const char *argv[]) {
     ctci6::reverse(str);
     std::cout << "after reverse: " << str << std::endl;
 
-
     auto cppstr = std::string("abcdef");
 
     std::cout << "before reverse<std::string>: " << cppstr << std::endl;
-    ctci6::reverse(const_cast<char *>(cppstr.c_str()));
+    ctci6::reverse(cppstr.begin(), cppstr.end());
     std::cout << "after reverse<std::string>: " << cppstr << std::endl;
 
     return EXIT_SUCCESS;
@@ -75,17 +93,32 @@ int main(int argc, const char *argv[]) {
     f e d c b a \0
 */
 void ctci6::reverse(char *str) {
+    // Save the string size
     const auto size = std::strlen(str);
-
-    auto curr = str;
+    
+    // Save the address of the mid element
+    const auto mid = str + (size >> 1);
+     
+    // last starts at one-past the last element of str (the null-terminator)
     auto last = (str + size);
+    
+    // Copy str's address and use to traverse
+    auto curr = str;
 
-    while (curr != (str + (size >> 1))) {
+    while (curr != mid) {
+        // *(str + size) is temporary storage for *curr.
         *(str + size) = *(curr);
-
+        
+        /*
+            Expands to:
+            *(curr) = *(last - 1);
+            *(last - 1) = *(str + size);
+            --last;
+         */
         *(curr++) = *(--last);
         *(last) = *(str + size);
     }
-
+    
+    // Re-terminate the last character
     *(str + size) = '\0';
 }
